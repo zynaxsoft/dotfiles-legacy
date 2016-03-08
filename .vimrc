@@ -3,6 +3,9 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+" set update time for latex previewer
+set updatetime=1000
+
 " no compatible mode
 set nocompatible
 
