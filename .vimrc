@@ -1,3 +1,8 @@
+" pathogen plugin initialization
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
 " no compatible mode
 set nocompatible
 

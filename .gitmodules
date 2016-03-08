@@ -1,0 +1,6 @@
+[submodule ".vim/bundle/latex-live-preview"]
+	path = .vim/bundle/latex-live-preview
+	url = https://github.com/xuhdev/vim-latex-live-preview.git
+[submodule ".vim/bundle/powerline"]
+	path = .vim/bundle/powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
