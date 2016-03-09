@@ -1,0 +1,46 @@
+#!/bin/bash
+
+INSTALLDIR=${1:-$HOME}
+
+if [ "$1" == "-h" ] || [ "$1" == "-?" ] || [ "$1" == "--help" ]; then
+    echo "$0 <dotfiles install dir>"
+    echo "Existing dotfiles will be moved to <filename>.old"
+    exit
+fi
+
+echo -n "Do you want to use my vim configs? [N/y]"
+read -n 1 use_vim_configs
+
+if [ "$use_vim_configs" == "Y" ] || [ "$use_vim_configs" == "y" ]; then
+    mv $INSTALLDIR/.vim $INSTALLDIR/.vim.old
+    mv $INSTALLDIR/.vimrc $INSTALLDIR/.vimrc.old
+	ln -s $PWD/.vim $INSTALLDIR/.vim 2> /dev/null
+	ln -s $PWD/.vimrc $INSTALLDIR/.vimrc 2> /dev/null
+	mkdir $INSTALLDIR/.fonts/
+	mkdir -p $INSTALLDIR/.config/fontconfig/conf.d/
+	mv ./.vim/fonts/PowerlineSymbols.otf $INSTALLDIR/.fonts/
+	fc-cache -vf $INSTALLDIR/.fonts/
+	mv ./.vim/fonts/10-powerline-symbols.conf $INSTALLDIR/.config/fontconfig/conf.d/
+	
+fi
+echo
+
+echo -en "\nDo you want to use my git configs? [N/y]"
+read -n 1 use_git_configs
+
+if [ "$use_git_configs" == "Y" ] || [ "$use_git_configs" == "y" ]; then
+    echo -e "\nGit config settings"
+    echo -n "Name: "
+    read git_name
+    echo -ne "\nEmail: "
+    read git_email
+
+    cp $PWD/.gitconfig $INSTALLDIR/.gitconfig
+    sed -i "s/%%GITNAME%%/$git_name/" $INSTALLDIR/.gitconfig
+    sed -i "s/%%GITEMAIL%%/$git_email/" $INSTALLDIR/.gitconfig
+fi
+
+echo -e "\nInitializing submodules..."
+git submodule init && git submodule update
+
+echo "Done. Conflicting existing dotfiles were moved to <file>.old"
