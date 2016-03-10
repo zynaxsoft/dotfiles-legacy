@@ -18,9 +18,9 @@ if [ "$use_vim_configs" == "Y" ] || [ "$use_vim_configs" == "y" ]; then
 	ln -s $PWD/.vimrc $INSTALLDIR/.vimrc 2> /dev/null
 	mkdir $INSTALLDIR/.fonts/
 	mkdir -p $INSTALLDIR/.config/fontconfig/conf.d/
-	mv ./.vim/fonts/PowerlineSymbols.otf $INSTALLDIR/.fonts/
+	cp ./.vim/fonts/PowerlineSymbols.otf $INSTALLDIR/.fonts/
 	fc-cache -vf $INSTALLDIR/.fonts/
-	mv ./.vim/fonts/10-powerline-symbols.conf $INSTALLDIR/.config/fontconfig/conf.d/
+	cp ./.vim/fonts/10-powerline-symbols.conf $INSTALLDIR/.config/fontconfig/conf.d/
 	
 fi
 echo
