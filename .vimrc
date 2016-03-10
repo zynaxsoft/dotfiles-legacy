@@ -14,10 +14,13 @@ scriptencoding utf-8
 set encoding=utf-8 " Necessary to show Unicode glyphs
 set t_Co=256
 "let g:Powerline_symbols = 'fancy'
-python  from powerline.vim import setup as powerline_setup
-python  powerline_setup()
-python  del powerline_setup
-"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+" python  from powerline.vim import setup as powerline_setup
+" python  powerline_setup()
+" python  del powerline_setup
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+" color scheme
+colorscheme badwolf
 
 " set update time for latex previewer
 set updatetime=1000
