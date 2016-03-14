@@ -41,6 +41,10 @@ set smartcase
 set incsearch
 nnoremap <CR> :noh<CR>
 
+" Save undo history
+set undofile
+set undodir=~/.vim/undodir
+
 " X-command completion
 set wildmenu
 
