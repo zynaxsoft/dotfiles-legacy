@@ -25,6 +25,16 @@ if [ "$use_vim_configs" == "Y" ] || [ "$use_vim_configs" == "y" ]; then
 fi
 echo
 
+
+echo -n "Do you want to use my bash configs? [N/y]"
+read -n 1 use_bash_configs
+
+if [ "$use_bash_configs" == "Y" ] || [ "$use_bash_configs" == "y" ]; then
+	mv $INSTALLDIR/.bashrc $INSTALLDIR/.bashrc.old
+	ln -s $PWD/.bashrc $INSTALLDIR/.bashrc 2> /dev/null
+fi
+echo
+
 echo -en "\nDo you want to use my git configs? [N/y]"
 read -n 1 use_git_configs
 
