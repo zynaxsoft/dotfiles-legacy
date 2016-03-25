@@ -32,7 +32,7 @@ highlight GitGutterDelete ctermfg=red cterm=bold
 highlight GitGutterChangeDelete ctermfg=yellow cterm=bold
 
 " set update time for latex previewer
-set updatetime=250
+set updatetime=1000
 
 " search perferences
 set hlsearch
