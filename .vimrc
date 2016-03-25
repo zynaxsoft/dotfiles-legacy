@@ -48,6 +48,9 @@ nnoremap <CR> :noh<CR>
 " X-command completion
 set wildmenu
 
+" spell check for latex
+autocmd Filetype tex set spell
+
 " indentation
 set autoindent
 set shiftwidth=4
