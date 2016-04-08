@@ -20,16 +20,19 @@ set t_Co=256
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 " color scheme
-colorscheme badwolf
+" colorscheme badwolf
+syntax enable
+set background=light
+colorscheme solarized
 
 " set up git gutter column
-let g:gitgutter_override_sign_column_highlight = 0
-let g:gitgutter_sign_column_always = 1
-"highlight SignColumn ctermbg = 242
-highlight GitGutterAdd ctermfg=green cterm=bold
-highlight GitGutterChange ctermfg=yellow cterm=bold
-highlight GitGutterDelete ctermfg=red cterm=bold
-highlight GitGutterChangeDelete ctermfg=yellow cterm=bold
+" let g:gitgutter_override_sign_column_highlight = 0
+" let g:gitgutter_sign_column_always = 1
+" "highlight SignColumn ctermbg = 242
+" highlight GitGutterAdd ctermfg=green cterm=bold
+" highlight GitGutterChange ctermfg=yellow cterm=bold
+" highlight GitGutterDelete ctermfg=red cterm=bold
+" highlight GitGutterChangeDelete ctermfg=yellow cterm=bold
 
 " NERDTree hotkey
 map <C-n> :NERDTreeToggle<CR>
