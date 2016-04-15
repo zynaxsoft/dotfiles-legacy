@@ -4,3 +4,5 @@ if [ -x /usr/games/cowsay -a -x /usr/games/fortune ]; then
 fi
 
 eval `dircolors $HOME/dotfiles/.dir_colors/dircolors.ansi-light`
+
+alias open="gnome-open"
