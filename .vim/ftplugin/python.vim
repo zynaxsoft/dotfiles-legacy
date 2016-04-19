@@ -4,3 +4,7 @@ setlocal expandtab
 setlocal autoindent
 setlocal smarttab
 setlocal formatoptions=croql
+
+augroup PYTHON
+	autocmd InsertLeave * if bufname('%') != "[Command Line]" | pclose | endif
+augroup END
