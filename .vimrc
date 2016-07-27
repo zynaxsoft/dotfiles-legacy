@@ -22,10 +22,10 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 " color scheme
 " colorscheme badwolf
 syntax enable
-set background=light
-let g:Powerline_colorscheme='solarizedlight'
+"set background=light
+"let g:Powerline_colorscheme='solarizedlight'
 "let g:Powerline_theme='solarized256'
-colorscheme solarized
+"colorscheme solarized
 
 " set up git gutter column
 " let g:gitgutter_override_sign_column_highlight = 0
