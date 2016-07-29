@@ -38,6 +38,7 @@ syntax enable
 
 " NERDTree hotkey
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1
 
 " set update time for latex previewer
 set updatetime=1000
